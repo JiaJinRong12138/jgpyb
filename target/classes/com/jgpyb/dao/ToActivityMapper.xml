@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jgpyb.dao.ToActivityMapper">
+
+    <insert id="insterToActivity" parameterType="toActivity">
+        INSERT INTO tb_to_activity
+        value
+        (#{activity_id}, #{user_id})
+    </insert>
+
+    <select id="getLikeInfo" parameterType="string" resultType="toActivity">
+        SELECT distinct * FROM tb_to_activity
+        WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectCount" parameterType="string" resultType="int">
+        SELECT COUNT(distinct activity_id)
+        FROM tb_to_activity
+        WHERE activity_id = #{aid}
+    </select>
+
+    <delete id="deleteToActivity" parameterType="toActivity">
+        DELETE FROM tb_to_activity
+        WHERE
+        user_id = #{user_id}
+        AND
+        activity_id = #{activity_id}
+    </delete>
+</mapper>

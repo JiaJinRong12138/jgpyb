@@ -1,0 +1,156 @@
+.head_{
+	height: 100px;
+	border: 1px solid seagreen;
+}
+
+.head_img_{
+	width: 80px;
+	height: 80px;
+	border: 1px solid seagreen;
+	margin: 10px;
+	display: inline-block;
+}
+.head_img_>img{
+	width: 80px;
+	height: 80px;
+}
+.head_info_{
+	
+	height: 80px;
+	width: 40%;
+	border: 1px solid seagreen;
+	float: right;
+	margin: 10px;
+	
+}
+
+a{
+	text-decoration: none;
+	color: red;
+	font-size: 18px;
+}
+a:hover{
+	color: blue;
+	font-size: 20px;
+}
+head_img_
+.muen_{
+	margin-top: 50px;
+}
+
+
+.input_{
+	width: 300px;
+	height: 30px;
+	border: 2px solid green;
+	border-radius: 10px;
+	font-size: 16px;
+	font-family: "仿宋";
+	color: #008000;
+}
+.input_:hover{
+	font-style: italic;
+	border: 2px solid greenyellow;
+}
+
+.input_div, .div_all{
+	height: 50px;
+	text-align: center;
+}
+.input_submit{
+	width: 80px;
+	height: 30px;
+	border: 2px solid green;
+	border-radius: 10px;
+	font-size: 25px;
+	font-family: "仿宋";
+	color: #008000;
+	margin-top: 15px;
+	background-color: #ADFF2F;
+	font-size: 20px;
+}
+.input_submit:hover{
+	background-color: #2E8B57;
+	color: black;
+}
+.input_authcode{
+	width: 200px;
+	height: 30px;
+	border: 2px solid green;
+	border-radius: 10px;
+	font-size: 25px;
+	font-family: "仿宋";
+	color: #008000;
+}
+.input_authcode:hover{
+	font-style: italic;
+	border: 2px solid greenyellow;
+}
+
+.authcode>img{
+	width: 80px;
+	height: 30px;
+	border: 1px solid seagreen;
+	margin-left: 10px;
+	display: inline-block;
+	border-radius: 10%;
+	margin-bottom: -7px;	
+}
+.cimg{
+	width: 150px;
+	border: 1px solid green;
+	border-radius:1px;
+	font-family: "仿宋";
+	color: blue;
+	margin-bottom: 10px;
+}
+.textarea_{
+	/* 固定大小 */
+	resize: none;
+	width: 300px;
+	border: 2px solid green;
+	border-radius: 10px;
+	font-size: 25px;
+	font-family: "仿宋";
+	color: #008000;
+	/* 隐藏x滚动条 */
+	overflow-x: hidden;
+	margin-top: -5px;
+}
+.input_submit_{
+	width: 300px;
+	height: 30px;
+	border: 2px solid green;
+	border-radius: 10px;
+	font-size: 25px;
+	font-family: "仿宋";
+	color: #008000;
+	margin-top: 15px;
+	background-color: #14bbd6;
+	font-size: 20px;
+}
+.textarea_1{
+	/* 固定大小 */
+	resize: none;
+	width: 300px;
+	height: 500px;
+	border: 2px solid green;
+	border-radius: 10px;
+	font-size: 25px;
+	font-family: "仿宋";
+	color: #008000;
+	/* 隐藏x滚动条 */
+	overflow-x: hidden;
+}
+.input_btn{
+	height: 30px;
+	border: 2px solid green;
+	border-radius: 10px;
+	font-size: 16px;
+	font-family: "仿宋";
+	color: #008000;
+}
+.input_btn:hover{
+	font-style: italic;
+	border: 2px solid greenyellow;
+}

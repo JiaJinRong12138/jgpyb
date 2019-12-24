@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jgpyb.dao.ActivityMapper">
+
+    <resultMap id="userinfo_activitis" type="User">
+        <id property="id" column="uid" />
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="head_uri" column="head_uri"/>
+        <result property="sex" column="sex" />
+        <result property="email" column="email"/>
+        <result property="nickname" column="nickname"/>
+        <result property="education" column="education"/>
+        <result property="work" column="work"/>
+        <result property="city" column="city"/>
+        <result property="hobby" column="hobby"/>
+        <result property="intro" column="intro"/>
+        <collection property="activities" ofType="Activity">
+            <id property="id" column="aid" />
+            <result property="user_id" column="user_id"/>
+            <result property="time" column="time" />
+            <result property="img_uri" column="img_uri"/>
+            <result property="context" column="context" />
+        </collection>
+    </resultMap>
+
+
+    <insert id="insterActivity" parameterType="activity">
+        INSERT INTO tb_activity
+        VALUE
+        (#{id}, #{user_id}, #{time}, #{img_uri}, #{context})
+    </insert>
+
+    <select id="getActivitisByUserId" parameterType="string" resultMap="userinfo_activitis">
+        SELECT *, tb_user.id as 'uid', tb_activity.id as 'aid' from tb_user, tb_activity
+        where
+        tb_user.id = tb_activity.user_id
+        and
+        tb_user.id = #{id}
+        /* 根据时间排序（vachar to int） */
+        order by cast(tb_activity.time as SIGNED INTEGER) DESC
+    </select>
+
+    <delete id="deleteAcById" parameterType="string">
+        DELETE FROM tb_activity
+        WHERE
+        id = #{id}
+    </delete>
+</mapper>

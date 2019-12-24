@@ -1,0 +1,150 @@
+/* 导入其他css 文件 */
+
+body{
+	/* 设置背景图品 */
+	background: url(../img/back.jpg) no-repeat;
+	/* 大小自适应 */
+	background-size: contain;
+	/* 固定背景图片 */
+	background-attachment: fixed;
+	
+}
+
+.border_{
+	margin: 0 auto;
+	width: 260px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+
+.title{
+	margin: 5px auto;
+	/* 外边框 */
+	border: 1px solid black;
+	width: 250px;
+	font-family: zzfont;
+	font-size: 100px;
+	text-align: center;
+	
+}
+.title_view{
+	text-align: center;
+	font-family: zzfont;
+	font-size: 40px;
+	/* 字体间距25px */
+	letter-spacing: 25px;
+	margin-left: 25px;
+}
+
+.daohang{
+	/* flex 布局 实现div横向显示 */
+	display: flex;
+	width: 100%;
+}
+.item{
+	width: 25%;
+	text-align: center;
+	font-size: 50px;
+	font-family: zzfont;
+}
+
+ .peo{
+	 width: 95%;
+	 height: 50%;
+	 padding: 5px 10px 5px 10px;
+	 cursor: pointer;
+ } 
+
+
+/*  使用瀑布流实现  */
+.parent { 
+	width:100%;
+	/* 将界面分成4 列 */
+	column-count: 4;
+ }
+ .child {
+	margin-bottom:25px;	 
+	color:#fff;
+	/* 消除多余在div外的部分 */
+	overflow: hidden;
+ }
+ 
+ 
+ /*  实现div 上浮  */
+ .intor_div{
+	background: rgba(0,0,0,0.5);
+	/* 绝对定位 实现信息的显示 */
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 90px;
+	height: 0px;
+	color: #FFFFFF;
+	/* 使用自定义字体 */
+	font-family: zzfont;
+	/* 行高50px */
+	line-height: 50px ;
+	font-size: 30px;
+	/* 消除多余在div外的部分 */
+	overflow: hidden;
+ }
+ .intor_div_view{
+	 width: 100%;
+	 height: 100%;
+	 display: flex;
+ }
+ 
+ .child:hover .intor_div{
+	margin-top: 2px;
+ 	font-size: 40px;
+ 	width: 100%;
+	/* 文字居中 */
+ 	text-align: center;
+ 	height: 50%;
+	 /* 添加过度动画1秒 */
+	 transition: all 2s;
+	
+ }
+ 
+ 
+ .child:hover{
+	 /* 设置相对定位 */
+ 	position: relative;
+ }
+ 
+ 
+ /*  实现图片放大的动画  */
+ .child img{
+	 /* 鼠标变手手 */
+	 cursor: pointer;
+	 /* 添加过度动画1秒 */
+	 transition: all 2s;
+ }
+ 
+ .child img:hover{
+	 /* 图片中心放大1.2倍 */
+	 transform: scale(1.2);
+ }
+ 
+ .btn_{
+	 /* 上下3%, 左右居中 */
+	 margin: 3% auto;
+	 width: 30%;
+	 height:50px;
+	 /* 圆角20px */
+	 border-radius: 20px;
+	 /* 字体大小30px */
+	 font-size: 30px;
+	 background-color: rgba(30, 144, 255, 0.5);
+	 /* 鼠标变手手 */
+	 cursor: pointer;
+ }
+ .btn_:hover{
+	 /* 添加动画过度 */
+	 transition: all 0.5s;
+	 /* 添加背景色 0.5为透明度 */
+	 background-color: rgba(255, 165, 0, 0.5);
+ }
+ 
+ 
+ 

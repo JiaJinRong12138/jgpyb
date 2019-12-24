@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:schemaLocation="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!-- 读取配置文件 -->
+    <context:property-placeholder location="classpath:db.properties"/>
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <!-- 配置连接驱动 -->
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <!-- 配置使用账户 -->
+        <property name="username" value="${jdbc.username}"/>
+        <!-- 配置使用密码 -->
+        <property name="password" value="${jdbc.password}"/>
+        <!-- 配置url -->
+        <property name="url" value="${jdbc.url}"/>
+        <!-- 配置初始空闲数 -->
+        <property name="initialSize" value="${jdbc.initialSize}"/>
+        <!-- 配置最大空闲数 -->
+        <property name="maxTotal" value="${jdbc.maxTotal}"/>
+        <!-- 配置最小空闲数 -->
+        <property name="minIdle" value="${jdbc.minIdle}"/>
+        <!-- 配置超时 -->
+        <property name="maxWaitMillis" value="${jdbc.maxWaitMillis}"/>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="DataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 需要进行事务管理的数据库 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 开启事务注解模式 -->
+    <tx:annotation-driven transaction-manager="DataSourceTransactionManager"/>
+
+    <!-- 配置Mybatis 工厂 -->
+    <bean id="SqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+
+        <!-- 配置Mybatis 配置文件的位置 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+
+    <!-- 配置Mapper 扫描 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 扫描的包的位置 -->
+        <property name="basePackage" value="com.jgpyb.dao"/>
+    </bean>
+
+    <!-- 扫描Service -->
+    <context:component-scan base-package="com.jgpyb.services"/>
+
+</beans>
