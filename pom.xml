@@ -20,7 +20,7 @@
     <!-- Spring 版本 -->
     <springVersion>5.1.4.RELEASE</springVersion>
     <!-- Mybatis 版本 -->
-    <mybatisVersion>3.4.6</mybatisVersion>
+    <mybatisVersion>3.5.6</mybatisVersion>
 
   </properties>
 
