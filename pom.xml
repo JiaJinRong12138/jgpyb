@@ -18,7 +18,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <!-- Spring 版本 -->
-    <springVersion>5.1.4.RELEASE</springVersion>
+    <springVersion>5.2.20.RELEASE</springVersion>
     <!-- Mybatis 版本 -->
     <mybatisVersion>3.4.6</mybatisVersion>
 
